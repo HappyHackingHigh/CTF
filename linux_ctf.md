@@ -134,8 +134,46 @@ http://120.114.62.39/ForYou.tar.gz
 
 ```
 # Linux CTF 9
+
+你知道如何下載TobeExe檔案並讓他執行嗎?
+
+如使用以下連線，需在 /tmp 目錄底下建立自己的目錄才能下載檔案 
+如: /tmp/404040
+
 ```
+進入tmp目錄下的學號目錄  ==> cd /tmp/404050
+
+下載遠端網站伺服器的TobeExe檔案 ==> wget http://120.114.62.39/TobeExe
+
+查看TobeExe檔案類型 ==> file TobeExe
+
+賦予TobeExe檔案執行權限 ==> chmod +x TobeExe
+
+執行TobeExe檔案 ==> ./TobeExe
 
 ```
 
 # Linux CTF 10
+
+只有執行檔你如何顯示重要資訊?
+
+下載連結:http://120.114.62.39/reverse
+
+如使用以下連線，需在 /tmp 目錄底下建立自己的目錄才能下載檔案 
+如: /tmp/404040
+```
+進入tmp目錄下的學號目錄 ==> cd /tmp/404050
+
+下載遠端網站伺服器的reverse檔案 ==> wget http://120.114.62.39/reverse
+ 
+查看reverse檔案類型 ==> file reverse
+  
+賦予reverse檔案執行權限  ==> chmod +x reverse
+
+執行reverse檔案  ==> ./reverse
+
+過濾reverse執行檔內的"flag"字串  ==> strings reverse | grep flag
+  
+過濾reverse執行檔內的"CTF"字串  ==> strings reverse | grep CTF
+
+```
