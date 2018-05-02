@@ -4,7 +4,11 @@ STEG(必) 20
 
 
 # Steg-2
-sCTF 2016 Q1 : banana-boy-20(必) 50
+
+>* sCTF 2016 Q1 : banana-boy-20(必) 50
+>* https://github.com/ctfs/write-ups-2016/tree/master/sctf-2016-q1/forensic/banana-boy-20
+>* http://blog.csdn.net/riba2534/article/details/70544076
+>* https://github.com/nbrisset/CTF/tree/master/sctf-2016-q1/challenges/banana-boy-20
 
 解題步驟1:查看檔案格式
 
