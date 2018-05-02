@@ -2,36 +2,100 @@
 
 STEG(必) 20
 
+
 # Steg-2
 sCTF 2016 Q1 : banana-boy-20(必) 50
+
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
 
 # Steg-2
 BITSCTF 2017 : black-hole-10 20
 
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
+
 # Steg-2
 CSAW Quals CTF 2013: Black & White 50
+
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
 
 # Steg-2
 BITSCTF 2017 : flagception-30
 50
 
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
+
 # Steg-2
 CSAW QUALS 2015: keep-calm-and-ctf(必)
 50
+
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
 
 # Steg-2
 ABCTF 2016 : just-open-it(必)
 50
 
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
+
 # Steg-2
 ABCTF 2016 : gz-30
 60
+解題步驟1:
+解題步驟2:
+解題步驟3:
+解題步驟4:
+解題步驟5:
+解題步驟6:
+
+### gzip命令的常用選項
+```
+-c，--stdout將解壓縮的內容輸出到標準輸出，原檔案保持不變
+-d，--decompress解壓縮
+-f，--force強制覆蓋舊檔案
+-l，--list列出壓縮包內儲存的原始檔案的資訊（如，解壓後的名字、壓縮率等）
+-n，--no-name壓縮時不儲存原始檔案的檔案名和時間戳，解壓縮時不恢復原始檔案的檔案名和時間戳（此時，解出來的檔案，其檔案名為壓縮包的檔案名）
+-N，--name壓縮時儲存原始檔案的檔案名和時間戳，解壓縮時恢復原始檔案的檔案名和時間戳
+-q，--quiet抑制所有警告資訊
+-r，--recursive遞迴
+-t，--test測試壓縮檔案完整性
+-v，--verbose冗餘模式（即顯示每一步的執行內容）
+-1、-2、...、-9壓縮率依次增大，速度依次減慢，預設為-6
+
+```
 
 # Steg-2
 ABCTF 2016 : best-ganondorf-50
 60
 
-http://blog.squareroots.de/en/2014/08/hitcon-ctf-2014-puzzle/
 
 解題步驟1:查看檔案格式
 ```
@@ -98,3 +162,7 @@ Options:
     -u          use upper case hex letters.
     -v          show version: "xxd V1.10 27oct98 by Juergen Weigert".
 ```
+
+
+
+http://blog.squareroots.de/en/2014/08/hitcon-ctf-2014-puzzle/
