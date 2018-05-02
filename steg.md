@@ -32,6 +32,16 @@ exiftool img.jpg
 ```
 
 # Steg-3
+>* ABCTF 2016 : just-open-it(必) 50
+
+解題步驟1:查看檔案格式
+
+解題步驟2:查看檔案內藏的字串
+```
+strings just_open_it.jpg | grep ABCTF
+```
+
+# Steg-3
 
 >* CSAW Quals CTF 2013: Black & White 50
 
@@ -42,11 +52,11 @@ exiftool img.jpg
 解題步驟3:打開檔案看看
 
 解題步驟4:使用stegsolve調色階
-
+```
 https://aur.archlinux.org/packages/stegsolve/
 
 the flag in the blue, red or green 0 pane
-
+```
 解題步驟4:
 解題步驟5:
 解題步驟6:
@@ -206,16 +216,7 @@ BITSCTF 2017 : flagception-30
 
 
 
-# Steg-2
-ABCTF 2016 : just-open-it(必)
-50
 
-解題步驟1:
-解題步驟2:
-解題步驟3:
-解題步驟4:
-解題步驟5:
-解題步驟6:
 
 # Steg-2
 ABCTF 2016 : gz-30
