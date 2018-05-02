@@ -7,7 +7,7 @@ STEG(必) 20
 
 解題步驟1:查看檔案格式
 ```
- /root/Desktop/img.jpg
+file /root/Desktop/img.jpg
 ```
 
 解題步驟2:查看檔案內藏的字串
