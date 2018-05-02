@@ -68,7 +68,7 @@ root@kali:~/Desktop# xxd ezmonay.jpg | head
 
 解題步驟6:打開修正後的圖片幾可得到解答
 
-###### xxd
+### xxd
 
 xxd:將一個檔案以十六進位的形式顯示出來
 ```
