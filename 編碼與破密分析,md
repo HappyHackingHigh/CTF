@@ -1,0 +1,319 @@
+# 編碼與解碼:
+
+# encode_and_decode_1:
+
+ASCII
+>*  
+>*  
+>*  
+>*  
+
+# encode_and_decode_2:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_3:
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+# encode_and_decode_4:
+
+>*  
+>* 
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+```
+
+```
+
+
+# Crypto_1:
+
+>*  ABCTF 2016 : ceasar-salad-10 10
+>* 
+
+解法1:使用線上工具解題
+
+輸入看看http://www.xarg.org/tools/caesar-cipher/
+
+解法2:使用線上工具解題
+```
+暴力破解法[窮舉法] Brute Force
+把所有可能的方法都執行看看
+```
+https://planetcalc.com/1434/
+
+解法3:直覺法
+
+xyzqc{t3_qelrdeq_t3_k33a3a_lk3_lc_qe3p3}==>abctf{FLAG}
+
+
+解法4:使用python程式解題
+
+```
+import string
+
+caesaralpha = "abcdefghijklmnopqrstuvwxyz0123456789"
+
+def caesar(input_string, rot):
+    output_string = ""
+    for i in range(len(input_string)):
+        if input_string[i].isalnum():
+            idx = (caesaralpha.find(input_string[i]) + rot) % len(caesaralpha)
+            output_string += caesaralpha[idx]
+        else:
+            output_string += input_string[i]
+    return output_string
+
+enc = '7sj-ighm-742q3w4t' # encrypt data
+
+for i in range(len(caesaralpha)):
+    print caesar(enc, i)
+```
+
+
+EasyCTF 2015: Julius Save Me (20)
+https://github.com/ctfs/write-ups-2015/tree/master/easyctf-2015/cryptography/julius-save-me
+
+UFO CTF School 2016 : rotate-it-25
+https://github.com/ctfs/write-ups-2016/tree/master/ufo-ctf-school-2016/crypto/rotate-it-25
+
+RC3 CTF 2016 : salad-100
+https://github.com/ctfs/write-ups-2016/tree/master/rc3-ctf-2016/crypto/salad-100
+
+
+
+# Crypto_2:
+>*  Pico CTF 2014 : Substitution 50
+>* [替換式密碼Substitution cipherの頻率分析法](https://zh.wikipedia.org/wiki/%E9%A2%91%E7%8E%87%E5%88%86%E6%9E%90)
+
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+
+# Crypto_3:
+>*  angstromCTF 2017: Substitution Cipher 60
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+
+AlexCTF2017: Fore1-Hit_the_core 50
+RC3 CTF 2016 : salad-100 20
+EKOPARTY CTF 2015: SCYTCRYPTO 50
+
+School CTF 2015: affine-cipher-100(教) 150
+
+angstromCTF 2017:The Beginning 10
+angstromCTF 2016 : artifact-20 20
+EasyCTF-2014:A Simple Cipher 20
+
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
+# Crypto_1:
+>*  
+>* 
+解題步驟1:
+
+解題步驟2:
+
+解題步驟3:
+
+解題步驟4:
+
+```
+
+```
