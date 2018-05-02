@@ -214,9 +214,12 @@ BITSCTF 2017 : flagception-30
 解題步驟5:
 解題步驟6:
 
+https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
+```
+#!/usr/bin/env python
 
-
-
+print ''.join([chr(int(i,2)) for i in '1000010 1001001 1010100 1010011 1000011 1010100 1000110 1111011 1100110 0110001 1100001 1100111 1100011 0110011 1110000 1110100 0110001 0110000 1101110 1111101'.split(' ')])
+```
 
 # Steg-2
 ABCTF 2016 : gz-30
@@ -331,6 +334,18 @@ Options:
     -v          show version: "xxd V1.10 27oct98 by Juergen Weigert".
 ```
 
+PasswordPDF - 80
+Use dictionary attack.
+
+https://github.com/ctfs/write-ups-2016/tree/master/abctf-2016/forensic/passwordpdf-80
+
+https://kimiyuki.net/blog/2016/07/23/abctf-2016/
 
 
+
+$ pdfcrack --wordlist=crackstation-human-only.txt mypassword.pdf
+
+ https://crackstation.net/buy-crackstation-wordlist-password-cracking-dictionary.htm
+ 
+ The pdf password is elephant. Invert the pdf content: ABCTF{Damn_h4x0rz_always_bypassing_my_PDFs}.
 http://blog.squareroots.de/en/2014/08/hitcon-ctf-2014-puzzle/
