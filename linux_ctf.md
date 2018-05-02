@@ -3,13 +3,16 @@
 你知道如何 安全連線到 遠端伺服器嗎?
 
 ```
-  使用ssh連線至120.114.62.48 Port:2200===>ssh lab@120.114.62.48 -p 2200
+  使用ssh連線至120.114.62.48 Port:2200 ===> ssh lab@120.114.62.48 -p 2200
 
-  列出當前目錄底下的檔案與子目錄:ls
+  列出當前目錄底下的檔案與子目錄 ===> ls
 
-  檢視flag檔案內容:cat flag
+  檢視flag檔案內容 ===> cat flag
 
 ```
+
+>* https://www.tecmint.com/13-basic-cat-command-examples-in-linux/
+>* http://www.linfo.org/cat.html
 
 # Linux CTF 2
 
@@ -27,6 +30,8 @@
 檢視隱藏檔案內容==>
 
 ```
+
+>* https://www.tecmint.com/15-basic-ls-command-examples-in-linux/
 
 # Linux CTF 3
 
@@ -52,6 +57,8 @@
 
 提示 : 檔案位置 /home/lab/base64.txt
 
+>* https://linux.die.net/man/1/base64
+
 ```
 列出當前檔案與目錄==> ls
 
@@ -71,6 +78,9 @@
 檢視目錄底下的secret檔案內容 ==> 
 
 ```
+
+>* https://www.binarytides.com/linux-find-command-examples/
+
 
 # Linux CTF 6
 
