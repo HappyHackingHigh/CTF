@@ -25,6 +25,15 @@ Defund wrecked his essay in a text editor to pretend that his file got corrupted
 
 https://github.com/LFlare/ctf-writeups
 
+
+# angstromCTF 2017
+
+https://rawsec.ml/en/angstromCTF-2017-write-ups/
+
+50 - Image Trickery - Forensics ==> QR code
+
+60 - Document - Forensics ==> word forensics
+
 # AngstromCTF_2018:
 
 a single-byte XOR encryption
