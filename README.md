@@ -1,6 +1,17 @@
 # CTF
+Klee and angr
+
+https://www.slideshare.net/bananaappletw/klee-and-angr-81332924
+
+Simple crypto
+
+https://www.slideshare.net/SiChenLin/simple-crypto
+
+http://angelboy.tw/
 
 https://github.com/scwuaptx/HITCON-Training
+
+http://veritas501.space/2017/05/23/HITCON-training%20writeup/
 
 AngstromCTF 2018
 
