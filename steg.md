@@ -132,11 +132,9 @@ conv=conversion[,conversion...] #用指定的參數轉換檔。
 # Steg-6
 BITSCTF 2017 : black-hole-10 20
 
-https://github.com/ctfs/write-ups-2017/tree/master/bitsctf-2017/forensic/black-hole-10
-
-https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/black_hole
-
-https://github.com/nbrisset/CTF/tree/master/bitsctf-2017/challenges/black-hole-10_lily_flac
+>* https://github.com/ctfs/write-ups-2017/tree/master/bitsctf-2017/forensic/black-hole-10
+>* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/black_hole
+>* https://github.com/nbrisset/CTF/tree/master/bitsctf-2017/challenges/black-hole-10_lily_flac
 
 
 解題步驟1:
@@ -199,11 +197,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 
-
-
 # Steg-7:BITSCTF 2017 : flagception-30 50(略)
 
 >* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
+
 ```
 #!/usr/bin/env python
 
@@ -260,7 +257,10 @@ ezmonay.jpg: PDP-11 UNIX/RT ldp
 ```
 
 解題步驟2:上網看看檔案特徵
-![List of file signatures檔案格式特徵](https://en.wikipedia.org/wiki/List_of_file_signatures)
+
+List of file signatures檔案格式特徵
+
+https://en.wikipedia.org/wiki/List_of_file_signatures
 
 找出jpg的檔案特徵
 
