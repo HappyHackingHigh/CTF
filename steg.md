@@ -31,7 +31,27 @@ sudo apt-get install exiftool
 exiftool img.jpg
 ```
 
-# Steg-2
+# Steg-3
+
+>* CSAW Quals CTF 2013: Black & White 50
+
+解題步驟1:查看檔案格式
+
+解題步驟2:查看檔案內藏的字串
+
+解題步驟3:打開檔案看看
+
+解題步驟4:使用stegsolve調色階
+
+https://aur.archlinux.org/packages/stegsolve/
+
+the flag in the blue, red or green 0 pane
+
+解題步驟4:
+解題步驟5:
+解題步驟6:
+
+# Steg-4
 
 >* sCTF 2016 Q1 : banana-boy-20(必) 50
 >* https://github.com/ctfs/write-ups-2016/tree/master/sctf-2016-q1/forensic/banana-boy-20
@@ -171,15 +191,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 
-# Steg-2
-CSAW Quals CTF 2013: Black & White 50
 
-解題步驟1:
-解題步驟2:
-解題步驟3:
-解題步驟4:
-解題步驟5:
-解題步驟6:
 
 # Steg-2
 BITSCTF 2017 : flagception-30
