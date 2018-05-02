@@ -2,6 +2,8 @@
 
 AngstromCTF 2018
 
+>* 題目==>https://writeups.amosng.com/2018/angstromctf_2018/misc/waldo-2_30/
+
 https://medium.com/bugbountywriteup/angstromctf-writeups-4e3d51c3dc42
 
 https://rawsec.ml/en/angstromCTF-2018-write-ups/
@@ -17,9 +19,26 @@ Forensics
 
 HSCTF_2017: Basic Bucketfill
 
+60 - Document - Forensics
+Defund wrecked his essay in a text editor to pretend that his file got corrupted.
+
 
 https://github.com/LFlare/ctf-writeups
 
+# AngstromCTF_2018:
+
+a single-byte XOR encryption
+```
+import binascii
+
+ciphertext = binascii.unhexlify("fbf9eefce1f2f5eaffc5e3f5efc5efe9fffec5fbc5e9f9e8f3eaeee7")
+for key in range(255):
+    plaintext = ""
+    for c in ciphertext:
+        plaintext += chr(c ^ key)
+    if "ctf" in plaintext:
+        print(plaintext)
+ ```      
 
 # Linux-CTF
 
