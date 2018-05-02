@@ -1,6 +1,4 @@
-# Steg-1
-
-STEG(必) 20
+# Steg-1: STEG(必) 20
 
 # Steg-2
 >*  CSAW QUALS 2015: keep-calm-and-ctf(必)50
@@ -41,7 +39,7 @@ exiftool img.jpg
 strings just_open_it.jpg | grep ABCTF
 ```
 
-# Steg-3
+# Steg-4
 
 >* CSAW Quals CTF 2013: Black & White 50
 
@@ -61,7 +59,7 @@ the flag in the blue, red or green 0 pane
 解題步驟5:
 解題步驟6:
 
-# Steg-4
+# Steg-5
 
 >* sCTF 2016 Q1 : banana-boy-20(必) 50
 >* https://github.com/ctfs/write-ups-2016/tree/master/sctf-2016-q1/forensic/banana-boy-20
@@ -131,7 +129,7 @@ conv=conversion[,conversion...] #用指定的參數轉換檔。
 ```
 
 
-# Steg-2
+# Steg-6
 BITSCTF 2017 : black-hole-10 20
 
 https://github.com/ctfs/write-ups-2017/tree/master/bitsctf-2017/forensic/black-hole-10
@@ -203,27 +201,17 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 
-# Steg-2
-BITSCTF 2017 : flagception-30
-50
+# Steg-7:BITSCTF 2017 : flagception-30 50(略)
 
-解題步驟1:
-解題步驟2:
-解題步驟3:
-解題步驟4:
-解題步驟5:
-解題步驟6:
-
-https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
+>* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
 ```
 #!/usr/bin/env python
 
 print ''.join([chr(int(i,2)) for i in '1000010 1001001 1010100 1010011 1000011 1010100 1000110 1111011 1100110 0110001 1100001 1100111 1100011 0110011 1110000 1110100 0110001 0110000 1101110 1111101'.split(' ')])
 ```
 
-# Steg-2
-ABCTF 2016 : gz-30
-60
+# Steg-8: ABCTF 2016 : gz-30 60
+
 解題步驟1:查看檔案格式
 ```
 root@kali:~/Desktop# file flag
@@ -263,10 +251,7 @@ gzip命令的常用選項
 
 ```
 
-# Steg-2
-ABCTF 2016 : best-ganondorf-50
-60
-
+# Steg-9: ABCTF 2016 : best-ganondorf-50  60
 
 解題步驟1:查看檔案格式
 ```
@@ -275,7 +260,7 @@ ezmonay.jpg: PDP-11 UNIX/RT ldp
 ```
 
 解題步驟2:上網看看檔案特徵
-[List of file signatures檔案格式特徵](https://en.wikipedia.org/wiki/List_of_file_signatures)
+![List of file signatures檔案格式特徵](https://en.wikipedia.org/wiki/List_of_file_signatures)
 
 找出jpg的檔案特徵
 
