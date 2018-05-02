@@ -1,5 +1,7 @@
 # CTF
 
+https://github.com/scwuaptx/HITCON-Training
+
 AngstromCTF 2018
 
 >* 題目==>https://writeups.amosng.com/2018/angstromctf_2018/misc/waldo-2_30/
