@@ -16,12 +16,72 @@ sCTF 2016 Q1 : banana-boy-20(必) 50
 # Steg-2
 BITSCTF 2017 : black-hole-10 20
 
+https://github.com/ctfs/write-ups-2017/tree/master/bitsctf-2017/forensic/black-hole-10
+
+https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/black_hole
+
+https://github.com/nbrisset/CTF/tree/master/bitsctf-2017/challenges/black-hole-10_lily_flac
+
+
 解題步驟1:
+
+
 解題步驟2:
+```
+root@kali:~/Desktop# strings black_hole.jpg 
+JFIF
+$3br
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+	#3R
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+}#Q-
+………………………………………………..
+M$Wh
+UQklUQ1RGe1M1IDAwMTQrODF9
+ZI;Z+
+e!K]z
+>}v#y=
+&XSlP
+7*qm
+```
 解題步驟3:
+```
+root@kali:~/Desktop# python 
+Python 2.7.14 (default, Sep 17 2017, 18:50:44) 
+[GCC 7.2.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import base64
+>>> base64.b64encode('BITSCTF')
+'QklUU0NURg=='
+```
 解題步驟4:
+```
+root@kali:~/Desktop# strings black_hole.jpg 
+JFIF
+$3br
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+	#3R
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+}#Q-
+………………………………………………..
+M$Wh
+UQklUQ1RGe1M1IDAwMTQrODF9
+ZI;Z+
+e!K]z
+>}v#y=
+&XSlP
+7*qm
+```
 解題步驟5:
-解題步驟6:
+```
+root@kali:~/Desktop# python
+Python 2.7.14 (default, Sep 17 2017, 18:50:44) 
+[GCC 7.2.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import base64
+>>> base64.b64decode('QklUQ1RGe1M1IDAwMTQrODF9')
+```
+
 
 # Steg-2
 CSAW Quals CTF 2013: Black & White 50
