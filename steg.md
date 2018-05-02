@@ -69,14 +69,30 @@ ABCTF 2016 : just-open-it(必)
 # Steg-2
 ABCTF 2016 : gz-30
 60
-解題步驟1:
+解題步驟1:查看檔案格式
+```
+root@kali:~/Desktop# file flag
+flag: gzip compressed data, was "flag", last modified: Sun Jun 26 17:22:38 2016, from Unix
+```
 解題步驟2:
+```
+root@kali:~/Desktop# mv flag flag.gz
+```
 解題步驟3:
+```
+root@kali:~/Desktop# gzip -d flag.gz
+```
 解題步驟4:
-解題步驟5:
-解題步驟6:
+```
+root@kali:~/Desktop# cat  flag
+```
 
-### gzip命令的常用選項
+### gzip命令
+gzip命令用來壓縮檔案。gzip是個使用廣泛的壓縮程式，檔經它壓縮過後，其名稱後面會多處“.gz”副檔名。
+
+gzip是在Linux系統中經常使用的一個對檔進行壓縮和解壓縮的命令，既方便又好用。gzip不僅可以用來壓縮大的、較少使用的檔以節省磁碟空間，還可以和tar命令一起構成Linux作業系統中比較流行的壓縮檔格式。據統計，gzip命令對文字檔有60%～70%的壓縮率。減少檔大小有兩個明顯的好處，一是可以減少存儲空間，二是通過網路傳輸檔時，可以減少傳輸的時間。
+
+gzip命令的常用選項
 ```
 -c，--stdout將解壓縮的內容輸出到標準輸出，原檔案保持不變
 -d，--decompress解壓縮
