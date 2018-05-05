@@ -55,9 +55,14 @@ https://aur.archlinux.org/packages/stegsolve/
 
 the flag in the blue, red or green 0 pane
 ```
-解題步驟4:
-解題步驟5:
-解題步驟6:
+```
+#!/bin/bash -ex
+
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+mkdir bin
+mv stegsolve.jar bin/
+```
 
 # Steg-5
 
