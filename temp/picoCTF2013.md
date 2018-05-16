@@ -1,6 +1,39 @@
+https://github.com/picoCTF/picoCTF-2013-problems
+
+
+PicoCTF 2013: Python Eval 1
+
+PicoCTF 2013: Client-Side i
+
+
+s the Best Side
+
+Forensics
+
+PicoCTF 2013: NAVSAT===>毀損的檔案
+
+PicoCTF 2013: Dark Star===>Autopsy
+
+PicoCTF 2013: Pilot Logic===>Autopsy
+
+PicoCTF 2013: Core Decryption===>Python
+
+PicoCTF 2013: In Hex, No One Can Hear You Complain
+
+PicoCTF 2013: DDoS Detection
 
 >* picoCTF2013: Bitwise
 >* https://github.com/ctfs/write-ups-2013/tree/master/pico-ctf-2013/bitwise
+
+Network Forensics
+
+PicoCTF 2013: First Contact
+
+linux
+
+PicoCTF 2013: Grep is Your Friend
+
+
 
 題目:
 ```
