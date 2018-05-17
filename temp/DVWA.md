@@ -10,3 +10,27 @@
 
 
 # 實戰DVWA
+
+## Command Injection
+
+## SQL Injection
+
+## SQL Injection (Blind)
+
+## File Inclusion
+
+## File Upload
+
+## Brute Force
+
+## Insecure CAPTCHA
+
+## Weak Session IDs
+
+## XSS (DOM)
+
+## XSS (Reflected)
+
+## XSS (Stored)
+
+## CSRF
