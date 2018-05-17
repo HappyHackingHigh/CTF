@@ -9,9 +9,9 @@
 ## Linux平台的bwappA建置:使用AppServ 
 
 
-# 實戰bwapp
+# 實戰bwapp[2013年OWASP TOP 10]
 
-## / A1 - Injection /
+## A1 - Injection 
 ```
 HTML Injection - Reflected (GET)
 HTML Injection - Reflected (POST)
