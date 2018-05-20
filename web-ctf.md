@@ -6,8 +6,88 @@ step1:先用瀏覽器看看
 ```
 
 step2:利用curl捕捉首頁
-```
+
 curl -v http://120.114.62.89:2014/
+```
+
+* Rebuilt URL to: http://120.114.62.89:2014/
+*   Trying 120.114.62.89...
+* Connected to 120.114.62.89 (120.114.62.89) port 2014 (#0)
+> GET / HTTP/1.1
+> Host: 120.114.62.89:2014
+> User-Agent: curl/7.47.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Date: Sun, 20 May 2018 07:45:13 GMT
+< Server: Apache/2.4.7 (Ubuntu)
+< Last-Modified: Wed, 11 Oct 2017 13:25:23 GMT
+< ETag: "797-55b455b1c36c0"
+< Accept-Ranges: bytes
+< Content-Length: 1943
+< Vary: Accept-Encoding
+< Content-Type: text/html
+< 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BreakALLCTF</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/heroic-features.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BreakALL CTF</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+            <h2>BreakALL CTF</h2>
+            </p>
+        <hr>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>你知道curl嗎?</h4>
+            </div>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-sm-12 hero-feature">
+                <div class="thumbnail">
+
+                    <div class="caption">
+                        <h3>flag在這!!!</h3>                
+                        <p>
+                            <a href="index.php" class="btn btn-primary">Go!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
+* Connection #0 to host 120.114.62.89 left intact
 ```
 step3:仔細看看回傳的預設首頁==>找到關鍵index.php
 
