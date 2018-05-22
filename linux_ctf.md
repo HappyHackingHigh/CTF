@@ -94,9 +94,14 @@ pstree(有空試看看)
 ```
 列出當前系統正在執行的Process ==> ps aux
 
-執行flag程式 ==>/bin/flag
+解法一:執行flag程式 ==>/bin/flag
 
+解法二: nc 127.0.0.1 2111
+
+socat TCP-LISTEN:2111,reuseaddr,fork EXEC:/bin/flag
 ```
+
+
 
 # Linux CTF 7
 
