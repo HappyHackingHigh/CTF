@@ -101,7 +101,14 @@ pstree(有空試看看)
 socat TCP-LISTEN:2111,reuseaddr,fork EXEC:/bin/flag
 ```
 
+伺服器執行:sudo socat TCP-LISTEN:700 EXEC:/bin/bash
 
+客戶端連線到伺服器: nc 127.0.0.1 700
+
+### socat
+
+>* http://brieflyx.me/2015/linux-tools/socat-introduction/
+>* Ubuntu安装:sudo apt-get install socat
 
 # Linux CTF 7
 
