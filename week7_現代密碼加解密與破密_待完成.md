@@ -7,14 +7,14 @@
 
 Math is cool!
 Use the RSA algorithm to decode the secret message, c, p, q, and e are parameters for the RSA algorithm.
-
+```
 p =  9648423029010515676590551740010426534945737639235739800643989352039852507298491399561035009163427050370107570733633350911691280297777160200625281665378483
 q =  11874843837980297032092405848653656852760910154543380907650040190704283358909208578251063047732443992230647903887510065547947313543299303261986053486569407
 e =  65537
 c =  83208298995174604174773590298203639360540024871256126892889661345742403314929861939100492666605647316646576486526217457006376842280869728581726746401583705899941768214138742259689334840735633553053887641847651173776251820293087212885670180367406807406765923638973161375817392737747832762751690104423869019034
-
+```
 Use RSA to find the secret message
-
+```
 #!/usr/bin/python2
 import gmpy2
 
@@ -31,6 +31,8 @@ d = gmpy2.invert(e,t)
 # Decryption
 m = pow(c,d,n)
 print "Solved ! m = %d" % m
+```
+
 
 # ABCTF 2016 : old-rsa-70
 
@@ -39,7 +41,7 @@ I'm sure you can retrieve the flag from this file.
 [HINT] Some good math skills may help.
 
 https://kimiyuki.net/blog/2016/07/23/abctf-2016/
-
+```
 步驟一:使用factordb.com 進行大質因數分解
 答案如下:
 p=238324208831434331628131715304428889871,q=296805874594538235115008173244022912163
@@ -60,11 +62,14 @@ d = lambda p, q, e: int(gmpy2.invert(e, (p-1)*(q-1)))
 key = RSA.construct((n, e, d(p,q,e)))
 import binascii
 print(binascii.unhexlify(hex(key.decrypt(c))[2:]).decode())
+```
+
 
 
 It was a RSA public key, with a non common size of 2070 bits:
-$ openssl rsa -noout -text -inform PEM -in public.key -pubin
 
+$ openssl rsa -noout -text -inform PEM -in public.key -pubin
+```
 Public-Key: (2070 bit)
 Modulus:
 25:b1:8b:f5:f3:89:09:7d:17:23:78:66:bb:51:cf:
@@ -86,7 +91,7 @@ b7:a8:9f:18:4a:36:50:32:b1:53:f8:42:5e:84:57:
 74:2e:4c:28:b0:3a:0f:a1:1c:ff:b0:31:73:d2:a4:
 cc:e6:ae:53
 Exponent: 65537 (0x10001)
-
+```
 
 
 # AlexCTF: CR4: Poor RSA
