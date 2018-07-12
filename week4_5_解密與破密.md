@@ -41,10 +41,8 @@ angstromCTF 2017:The Beginning
 https://github.com/ctfs/write-ups-2015/tree/master/easyctf-2015/cryptography/julius-save-me
 
 >* UFO CTF School 2016 : rotate-it-25
-
 https://github.com/ctfs/write-ups-2016/tree/master/ufo-ctf-school-2016/crypto/rotate-it-25
 
->* angstromCTF 2017:The Beginning 10
 >* EasyCTF-2014:A Simple Cipher 20
 >* https://www.xarg.org/tools/caesar-cipher/
 
