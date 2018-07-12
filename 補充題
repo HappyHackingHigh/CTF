@@ -1,0 +1,244 @@
+Pragyan 2016
+
+https://github.com/shiltemann/CTF-writeups-public/blob/master/Pragyan_2016/writeup.md
+
+Cryptography 20: BAIL Cipher
+Challenge
+
+Bob and Alice have come up with a new encryption to communicate. But they want you to figure out if its possible to decipher their messages easily. Can you decipher it?
+
+VGF4ME9GaGxnIHdXMkZqaDVlZiBzeFFtNHY5IGlsdWI=
+Solution
+
+base64 decode:
+
+Tax0OFhlg wW2Fjh5ef sxQm4v9 ilub
+The title suggest it could be a rail fence cipher, we check with a decoder (http://rumkin.com/tools/cipher/railfence.php) and find the solution when using 4 rails:
+
+T     a     x     0     O     F 
+ h   l g     w   W 2   F j   h 5
+  e f     s   x Q   m 4   v 9   
+         i     l     u     b    
+reading this along the rails gives:
+
+The flag is xwxlQW02mu4FOjvb9hF5
+
+
+Cryptography 20: I Agree
+Challenge
+
+Crack the cipher: vhixoieemksktorywzvhxzijqni
+
+Your clue is: "caesar is everything. But he took it to the next level."
+
+Solution
+
+From the hint I suspect this may be a Vigenère cipher
+
+There is a handy solver tool online: http://www.guballa.de/vigenere-solver
+
+which gets us the solution:
+
+Clear text using key "caesar":
+
+theforceisstrongwiththisone
+Flag
+
+theforceisstrongwiththisone
+
+
+Cryptography 25: RSA_encryption
+Challenge
+
+X has sent a message. Can you decrypt it? The encrypted message and the public key used to encrypt it ( key1_data.txt ) are given to you.
+
+rsaq
+
+Solution
+
+We get the encrypted message and public key N, but also a second file with a public key.
+
+ciphertext:
+
+Pob7AQZZSml618nMwTpx3V74N45x/rTimUQeTl0yHq8F0dsekZgOT385Jls1HUzWCx6ZRFPFMJ1RNYR2Yh7AkQtFLVx9lYDfb/Q+SkinBIBX59ER3/fDhrVKxIN4S6h2QmMSRblh4KdVhyY6cOxu+g48Jh7TkQ2Ig93/nCpAnYQ=
+key1_data.txt:
+
+Public key :
+
+n1 =
+123948613128507245097711825164030080528129311429181946930789480629270692835124562568997437300916285601268900901495788327838386854611883075845387070635813324417496512348003686061832004434518190158084956517800098929984855603216625922341285873495112316366384741709770903928077127611563285935366595098601100940173
+
+e = 65537
+key2_data.txt:
+
+Public key :
+
+n2 = 
+122890614849300155056519159433849880305439158904289542874766496514523043027349829509818565800562562195671251134947871996792136355514373160369135263766229423623131725044925870918859304353484491601318921285331340604341809979578202817714205469839224620893418109679223753141128229197377934231853172927071087589849
+
+e = 65537
+These numbers are way too large to factor, and no hits in factordb.com. We therefore take the second key file as a hint, maybe they use a common prime factor. Checking our theory we quickly find that they do, so then we can just decrypt the message:
+
+from Crypto.PublicKey import RSA
+from fractions import gcd
+import gmpy2
+import base64
+
+# our data
+N = 123948613128507245097711825164030080528129311429181946930789480629270692835124562568997437300916285601268900901495788327838386854611883075845387070635813324417496512348003686061832004434518190158084956517800098929984855603216625922341285873495112316366384741709770903928077127611563285935366595098601100940173
+N2 = 122890614849300155056519159433849880305439158904289542874766496514523043027349829509818565800562562195671251134947871996792136355514373160369135263766229423623131725044925870918859304353484491601318921285331340604341809979578202817714205469839224620893418109679223753141128229197377934231853172927071087589849
+e = 65537L 
+
+ct = 'Pob7AQZZSml618nMwTpx3V74N45x/rTimUQeTl0yHq8F0dsekZgOT385Jls1HUzWCx6ZRFPFMJ1RNYR2Yh7AkQtFLVx9lYDfb/Q+SkinBIBX59ER3/fDhrVKxIN4S6h2QmMSRblh4KdVhyY6cOxu+g48Jh7TkQ2Ig93/nCpAnYQ='
+ct = base64.b64decode(ct)
+
+# find the common prime factor p from the second file, then determine q
+p = gcd(N,N2)
+q = N/p
+r=(p-1)*(q-1)
+
+d = long(gmpy2.divm(1, e, r))
+
+# decrypt the message
+rsa = RSA.construct((N,e,d,p,q))
+pt = rsa.decrypt(ct)
+
+print pt
+This outputs
+
+Congrats! The flag is nothing_is_impossible
+Flag
+
+nothing_is_impossible
+Cryptography 30: Kill the devil
+Challenge
+
+Kill the d3vil in 7he bud
+
+Problem.txt
+
+Solution
+
+4c6544144496414154444f434550474e5464857595241
+kill the devil ..remove the sixes? ..this would make it valid ASCII:
+
+LTADIAATDOCEPGNTHWYRA
+
+
+Cryptography 100: Decipher Me
+Challenge
+
+Ten years after the starship Voyager's return from the Delta Quadrant, the Federation is in a crisis. The Federation's main suppliers of dilithium crystals (the primary catalyst for the fuel used in faster-than-light travel) are disappearing. Space and time have folded around several planets, isolating them from outside contact. The phenomenon is unnatural – someone or something is causing it to happen. And all they've got is this file. Can you help the Federation ?
+
+file
+
+Solution
+
+we get a file
+
+$ file decipherme
+decipherme: data
+opening the file in a hex editor reveals it is a PNG image with a broken header, we restore the first eight bytes of the file to their correct value:
+
+89 50 4e 47 0d 0a 1a 0a
+and get the image:
+
+
+
+the image simply shows the flag!
+
+Flag
+
+cyber_punk
+
+Misc 50: K
+Challenge
+
+It makes you mad , doesnt it?
+
+problem
+
+Solution
+
+The file contained the following:
+
+. . . . . . . . . . . . . . .
+. . . . . ! ? ! ! . ? . . . .
+. . . . . . . . . . . . . . .
+. ? . ? ! . ? . . . . . . . .
+! . ? . . . . . . . ! ? ! ! .
+? . . . . . . ? . ? ! . ? . .
+. . . . . . . . ! . ! ! ! ! !
+! ! . . . ! . . . . . . . . .
+. . . . ! . ? . . . . . . . !
+? ! ! . ? ! ! ! ! ! ! ? . ? !
+. ? ! ! ! ! ! . . . . . . . .
+. . . . . ! . . . . . ! . ? .
+. . . . . . . . ! ? ! ! . ? !
+! ! ! ! ! ! ! ? . ? ! . ? ! .
+! ! ! ! ! ! ! ! ! . ! . ? . .
+. . . . . . . ! ? ! ! . ? . .
+. . . . . . ? . ? ! . ? . . .
+. . . . . . . . . ! . ! ! ! !
+! . ? . . . . . . . . . ! ? !
+! . ? ! ! ! ! ! ! ! ! ? . ? !
+. ? ! . ! ! ! ! ! ! ! ! ! ! !
+. . . ! . . . . . . . . . . .
+! . ! ! ! . ! ! ! ! ! ! ! ! !
+. ? . . . . . . . . . ! ? ! !
+. ? . . . . . . . . ? . ? ! .
+? ! . ! ! ! ! ! ! ! ! ! . ! !
+! ! ! ! ! ! ! ! ! ! ! ! ! ! !
+. . . . . . . . . . . . . ! .
+? . 
+This seems like it could be the short form of the Ook esoteric language.
+
+Then use the interpreter here to translate:
+
+hvstzouwgccywgbchgcsogm
+Hmm, seems there is another encoding and after some exploring we find it is ROT-12.
+
+theflagisookisnotsoeasy
+Flag
+
+theflagisookisnotsoeasy
+
+
+a baconian cipher
+
+Steganography 30: Harry Potter
+Challenge
+
+Look twice before you believe anything
+
+
+
+Solution
+
+$ strings HP.png
+
+[..]
+- g{_
+PlLp
+u} Ic
+jg3U
+c)U>
+IEND
+wherE ShOUld onE ReaLly lOoK fOr tHis flag
+
+A hint came out after a while:
+
+Hint! A bacon sandwich is somewhat of a comfort food for Ron Weasley
+So maybe a baconian cipher.. if we interpret lowercase as A's and uppercase as B's we get:
+
+wherE ShOUld onE ReaLly lOoK fOr tHis flag
+aaaab babbaa aab baabaa abab aba abaa aaaa
+which we can decode here, giving us the flag
+
+bydelta
+if we use the setting I=J and U=V
+
+Flag
+
+bydelta
+
