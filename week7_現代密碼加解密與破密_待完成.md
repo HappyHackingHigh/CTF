@@ -145,8 +145,90 @@ EKO{classic_rsa_challenge_is_boring_but_necessary}
 
 >* https://fadec0d3.blogspot.com/2017/02/alexctf-2017-crypto.html
 
-步驟一:
+步驟一:format the hex values to get the integer product: 
 
-步驟一:使用factordb.com 進行大質因數分解
+openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n '
+
+
+openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n ' | xargs python -c 'import sys; print int(sys.argv[1], 16)'
+
+833810193564967701912362955539789451139872863794534923259743419423089229206473091408403560311191545764221310666338878019
+
+
+步驟二:使用factordb.com 進行大質因數分解
+
 答案如下:
+863653476616376575308866344984576466644942572246900013156919 * 965445304326998194798282228842484732438457170595999523426901
+
+步驟三:產生私鑰private key==>使用rsatool工具模組
+
+語法格式: ./rsatool.py -p primeP -q primeQ -o outputFile
+
+python ./rsatool/rsatool.py -p 863653476616376575308866344984576466644942572246900013156919 -q 965445304326998194798282228842484732438457170595999523426901 -o ./priv.key
+
+步驟四:使用openssl解密==>就可以得到答案
+
+openssl rsautl -decrypt -in flag.raw -inkey priv.key
+
+# SECCON 2017 Quals:crypto_ps_and_qs
+
+>* https://github.com/p4-team/ctf/tree/master/2017-12-09-seccon-quals/crypto_ps_and_qs
+
+```
+public keys share a prime
+factor both keys
+generate private key
+decrypt ciphertext with first key
+```
+
+In the task we get a ciphertext and two RSA public keys: pub1, pub2.
+
+As usual in case when there are more than one RSA public key, it's worth to check if maybe they don't share a prime:
+```
+import codecs
+from Crypto.PublicKey import RSA
+from crypto_commons.rsa.rsa_commons import gcd
+
+def read_key(filename):
+    with codecs.open(filename, "r") as input_file:
+        data = input_file.read()
+        pub = RSA.importKey(data)
+        print(pub.e, pub.n)
+    return pub
+
+
+def main():
+    pub1 = read_key("pub1.pub")
+    pub2 = read_key("pub2.pub")
+    p = gcd(pub1.n, pub2.n)
+    print(p)
+```
+```
+import codecs
+from Crypto.Util.number import long_to_bytes
+from crypto_commons.generic import bytes_to_long
+from crypto_commons.rsa.rsa_commons import gcd, get_fi_distinct_primes, modinv
+
+def read_ct():
+    with codecs.open("cipher", "rb") as input_file:
+        data = input_file.read()
+        print(len(data))
+        msg = bytes_to_long(data)
+    return msg
+
+
+p = gcd(pub1.n, pub2.n)
+print(p)
+q1 = pub1.n / p
+q2 = pub2.n / p
+print(p, q1)
+print(p, q2)
+msg = read_ct()
+
+d1 = modinv(pub1.e, get_fi_distinct_primes([p, q1]))
+d2 = modinv(pub2.e, get_fi_distinct_primes([p, q2]))
+
+first = pow(msg, d1, pub1.n)
+print(long_to_bytes(first))
+```
 
