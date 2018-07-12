@@ -1,6 +1,6 @@
-# Steg-1: STEG(必) 20
+# Steg-100_文件隱寫術
 
-# Steg-2
+# Steg-101
 >*  CSAW QUALS 2015: keep-calm-and-ctf(必)50
 
 解題步驟1:查看檔案格式
@@ -29,7 +29,7 @@ sudo apt-get install exiftool
 exiftool img.jpg
 ```
 
-# Steg-3
+# Steg-102
 >* ABCTF 2016 : just-open-it(必) 50
 
 解題步驟1:查看檔案格式
@@ -39,7 +39,7 @@ exiftool img.jpg
 strings just_open_it.jpg | grep ABCTF
 ```
 
-# Steg-4
+# Steg-103_黑白色塊隱藏的秘密
 
 >* CSAW Quals CTF 2013: Black & White 50
 
@@ -64,7 +64,7 @@ mkdir bin
 mv stegsolve.jar bin/
 ```
 
-# Steg-5
+# Steg_104_史上最有名的吃香蕉小朋友
 
 >* sCTF 2016 Q1 : banana-boy-20(必) 50
 >* https://github.com/ctfs/write-ups-2016/tree/master/sctf-2016-q1/forensic/banana-boy-20
@@ -133,8 +133,8 @@ count=blocks #僅拷貝 blocks 個塊，塊大小等於 ibs 指定的位元組�
 conv=conversion[,conversion...] #用指定的參數轉換檔。
 ```
 
+# Steg_105_黑洞隱藏術
 
-# Steg-6
 BITSCTF 2017 : black-hole-10 20
 
 >* https://github.com/ctfs/write-ups-2017/tree/master/bitsctf-2017/forensic/black-hole-10
@@ -202,17 +202,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 
-# Steg-7:BITSCTF 2017 : flagception-30 50(略)
+# Steg_106_錯置的檔案
 
->* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
-
-```
-#!/usr/bin/env python
-
-print ''.join([chr(int(i,2)) for i in '1000010 1001001 1010100 1010011 1000011 1010100 1000110 1111011 1100110 0110001 1100001 1100111 1100011 0110011 1110000 1110100 0110001 0110000 1101110 1111101'.split(' ')])
-```
-
-# Steg-8: ABCTF 2016 : gz-30 60
+ABCTF 2016 : gz-30 60
 
 解題步驟1:查看檔案格式
 ```
@@ -253,7 +245,9 @@ gzip命令的常用選項
 
 ```
 
-# Steg-9: ABCTF 2016 : best-ganondorf-50  60
+# Steg_107_錯誤的檔案
+
+ABCTF 2016 : best-ganondorf-50  60
 
 解題步驟1:查看檔案格式
 ```
@@ -323,6 +317,19 @@ Options:
     -u          use upper case hex letters.
     -v          show version: "xxd V1.10 27oct98 by Juergen Weigert".
 ```
+# Steg_108
+
+BITSCTF 2017 : flagception-30 50(略)
+
+>* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/flagception
+
+```
+#!/usr/bin/env python
+
+print ''.join([chr(int(i,2)) for i in '1000010 1001001 1010100 1010011 1000011 1010100 1000110 1111011 1100110 0110001 1100001 1100111 1100011 0110011 1110000 1110100 0110001 0110000 1101110 1111101'.split(' ')])
+```
+
+
 
 PasswordPDF - 80
 Use dictionary attack.
