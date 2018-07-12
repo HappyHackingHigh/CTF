@@ -210,8 +210,28 @@ python2 rsa_decrypt.py flag.enc private.pem
 
 EKO{classic_rsa_challenge_is_boring_but_necessary}
 
-# AlexCTF: CR4: Poor RSA
+# Alex CTF 2017  CR4: Poor RSA
 
+### 解法一:使用RsaCtfTool
+
+>* https://0xd13a.github.io/ctfs/alexctf2017/poor-rsa/
+
+
+$ python RsaCtfTool.py --publickey ./key.pub --uncipher ./flag --verbose --private
+```
+Try weak key attack
+-----BEGIN RSA PRIVATE KEY-----
+MIH5AgEAAjJSqZ4knufPPAy/ljoAlmF3K8nN9uHj+/xuRKB6Xg+JRFep+Bw64TKs
+VoPTWyi6XDJCQwIDAQABAjIzrQnKBvUPnpCxrK5x85DWuS8dbTtmFP+HEYHE3wja
+TF9QEkV6ZDCUBers1jQeQwJ5MQIaAImWgwYMdrnA3lgaaeDqnZG+0Qcb6x2SSjcC
+GgCZzedK7e6Hrf/daEy8R451mHC08gaS9lJVAhlmZEB1y+i/LC1L27xXycIhqKPe
+aoR6qVfZAhlbPhKLmhFavne/AqQbQhwaWT/rqHUL9EMtAhk5pem+TgbW3zCYF8v7
+j0mjJ31NC+0sLmx5
+-----END RSA PRIVATE KEY-----
+Clear text : .?&?d??#H?u6L???:ALEXCTF{SMALL_PRIMES_ARE_BAD}
+```
+
+### 解法二:
 >* https://fadec0d3.blogspot.com/2017/02/alexctf-2017-crypto.html
 
 步驟一:format the hex values to get the integer product: 
