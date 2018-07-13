@@ -95,7 +95,9 @@ Mandatory arguments to long options are mandatory for short options too.
   --version  output version information and exit
 
 ```
-# # Crypto_007_Bacon cipher
+#### Crypto_007_Bacon cipher
+
+暫未出題
 
 angstromCTF 2016 : shakespeare-60
 
