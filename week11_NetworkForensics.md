@@ -1,4 +1,53 @@
 
+# PicoCTF_2017: Special Agent User(MUST)
+```
+Looking in packet #93, we find the User-Agent(I get the reference)
+
+Mozilla/5.0 (X11; OpenBSD i386) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+
+==>試看看Mozilla 5.0, Safari 537.37 Chrome 36.0.1985
+```
+
+
+# hitcon-2017:Data & Mining
+
+```
+
+
+```
+# BITSCTF 2017 : woodstock-1-10
+
+```
+strings ws1_2.pcapng |grep -oE "BITSCTF{.*}" --color=never
+
+```
+
+# CSAW Quals CTF 2015: Networking 1
+```
+file networking.pcap
+
+strings -a networking.pcap | sort | uniq
+```
+
+# google-ctf-2016:Network Forensic
+```
+strings no-big-deal.pcap| egrep ".{10,}" | head
+
+echo 'Q1RGe2JldHRlcmZzLnRoYW4ueW91cnN9' | base64 -d 
+```
+
+# picoCTF 2017 : digital-camouflage-50
+```
+https://www.youtube.com/watch?v=ZAs3OUY4EhA
+```
+
+# Internetwache-CTF-2016:Network Forensic(MUST)
+```
+```
+#
+
+
+
 # TSCTF 2017 : woodstock-1-10
 
 >* https://github.com/USCGA/writeups/tree/master/online_ctfs/bitsctf_2017/woodstock
