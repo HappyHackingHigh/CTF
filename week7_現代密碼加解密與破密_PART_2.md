@@ -205,7 +205,7 @@ print(bytes.fromhex(hex(m)[2:]).decode())
 
 
 
-# RSA_CM_102
+# RSA_CF_102
 >* SECCON 2017 Quals:crypto_ps_and_qs
 >* Common Factor Attack
 >* 
