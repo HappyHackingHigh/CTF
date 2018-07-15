@@ -35,7 +35,11 @@ https://github.com/nccgroup/featherduster
 
 >* https://0xd13a.github.io/ctfs/alexctf2017/poor-rsa/
 
-
+```
+> tar tvzf ../cr4_poor_rsa.tar.gz
+-rw-r--r--  0 oddcoder oddcoder   69 Dec 11 10:08 flag.b64
+-rw-r--r--  0 oddcoder oddcoder  162 Dec 11 09:59 key.pub
+```
 $ python RsaCtfTool.py --publickey ./key.pub --uncipher ./flag --verbose --private
 ```
 Try weak key attack
@@ -51,6 +55,7 @@ Clear text : .?&?d??#H?u6L???:ALEXCTF{SMALL_PRIMES_ARE_BAD}
 ```
 
 ### 解法二:
+>* http://ronins.team/alexctf_cr4_poor_rsa/
 >* https://fadec0d3.blogspot.com/2017/02/alexctf-2017-crypto.html
 
 步驟一:format the hex values to get the integer product: 
