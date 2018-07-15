@@ -28,10 +28,60 @@ https://github.com/pablocelayes/rsa-wiener-attack
 An automated, modular cryptanalysis tool; i.e., a Weapon of Math Destruction
 https://github.com/nccgroup/featherduster
 
+# RSA_101
+>* Alex CTF 2017  CR4: Poor RSA
 
-### RSA_101
+### 解法一:使用RsaCtfTool
 
->* Sexy RSA - 160
+>* https://0xd13a.github.io/ctfs/alexctf2017/poor-rsa/
+
+
+$ python RsaCtfTool.py --publickey ./key.pub --uncipher ./flag --verbose --private
+```
+Try weak key attack
+-----BEGIN RSA PRIVATE KEY-----
+MIH5AgEAAjJSqZ4knufPPAy/ljoAlmF3K8nN9uHj+/xuRKB6Xg+JRFep+Bw64TKs
+VoPTWyi6XDJCQwIDAQABAjIzrQnKBvUPnpCxrK5x85DWuS8dbTtmFP+HEYHE3wja
+TF9QEkV6ZDCUBers1jQeQwJ5MQIaAImWgwYMdrnA3lgaaeDqnZG+0Qcb6x2SSjcC
+GgCZzedK7e6Hrf/daEy8R451mHC08gaS9lJVAhlmZEB1y+i/LC1L27xXycIhqKPe
+aoR6qVfZAhlbPhKLmhFavne/AqQbQhwaWT/rqHUL9EMtAhk5pem+TgbW3zCYF8v7
+j0mjJ31NC+0sLmx5
+-----END RSA PRIVATE KEY-----
+Clear text : .?&?d??#H?u6L???:ALEXCTF{SMALL_PRIMES_ARE_BAD}
+```
+
+### 解法二:
+>* https://fadec0d3.blogspot.com/2017/02/alexctf-2017-crypto.html
+
+步驟一:format the hex values to get the integer product: 
+
+openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n '
+
+
+openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n ' | xargs python -c 'import sys; print int(sys.argv[1], 16)'
+
+833810193564967701912362955539789451139872863794534923259743419423089229206473091408403560311191545764221310666338878019
+
+
+步驟二:使用factordb.com 進行大質因數分解
+
+答案如下:
+
+863653476616376575308866344984576466644942572246900013156919 * 965445304326998194798282228842484732438457170595999523426901
+
+步驟三:產生私鑰private key==>使用rsatool工具模組
+
+語法格式: ./rsatool.py -p primeP -q primeQ -o outputFile
+
+python ./rsatool/rsatool.py -p 863653476616376575308866344984576466644942572246900013156919 -q 965445304326998194798282228842484732438457170595999523426901 -o ./priv.key
+
+步驟四:使用openssl解密==>就可以得到答案
+
+openssl rsautl -decrypt -in flag.raw -inkey priv.key
+
+### RSA_102
+
+>* ABCTF 2016 : sexy-rsa-160
 >* https://kimiyuki.net/writeup/ctf/2016/abctf-2016/
 
 RSA cipher is strong. If only c,n,e are given, p,q must be gussable. For this n, p,q=⌊n−−√⌋±3.
@@ -152,72 +202,11 @@ for n, c in zip(N, C):
 m = inv_pow(a, e)
 print(bytes.fromhex(hex(m)[2:]).decode())
 
-# RSA_WA_
-
-RSA Wiener Attack
-```
-使用openssl工具解析RSA公開金鑰檔後發現加密金鑰e的位數很大，因此對應的解密金鑰位數就會比較低，
-可以猜測解題的思路是猜解出RSA解密金鑰d，也就是針對RSA演算法的低解密指數攻擊(RSA Wiener Attack)，
-攻擊代碼可以參考https://ctfcrew.org/writeup/87
-```
-```
-0x01  猜解RSA私密金鑰和素因數
-0x02 生成RSA私密金鑰檔
-0x03 使用openssl解密RSA密文
-
-http://bobao.360.cn/ctf/learning/124.html
-```
-# Alex CTF 2017  CR4: Poor RSA
-
-### 解法一:使用RsaCtfTool
-
->* https://0xd13a.github.io/ctfs/alexctf2017/poor-rsa/
 
 
-$ python RsaCtfTool.py --publickey ./key.pub --uncipher ./flag --verbose --private
-```
-Try weak key attack
------BEGIN RSA PRIVATE KEY-----
-MIH5AgEAAjJSqZ4knufPPAy/ljoAlmF3K8nN9uHj+/xuRKB6Xg+JRFep+Bw64TKs
-VoPTWyi6XDJCQwIDAQABAjIzrQnKBvUPnpCxrK5x85DWuS8dbTtmFP+HEYHE3wja
-TF9QEkV6ZDCUBers1jQeQwJ5MQIaAImWgwYMdrnA3lgaaeDqnZG+0Qcb6x2SSjcC
-GgCZzedK7e6Hrf/daEy8R451mHC08gaS9lJVAhlmZEB1y+i/LC1L27xXycIhqKPe
-aoR6qVfZAhlbPhKLmhFavne/AqQbQhwaWT/rqHUL9EMtAhk5pem+TgbW3zCYF8v7
-j0mjJ31NC+0sLmx5
------END RSA PRIVATE KEY-----
-Clear text : .?&?d??#H?u6L???:ALEXCTF{SMALL_PRIMES_ARE_BAD}
-```
 
-### 解法二:
->* https://fadec0d3.blogspot.com/2017/02/alexctf-2017-crypto.html
-
-步驟一:format the hex values to get the integer product: 
-
-openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n '
-
-
-openssl rsa -noout -text -inform PEM -in key.pub -pubin | grep -Evi 'mod|exp' | tr -d ':\n ' | xargs python -c 'import sys; print int(sys.argv[1], 16)'
-
-833810193564967701912362955539789451139872863794534923259743419423089229206473091408403560311191545764221310666338878019
-
-
-步驟二:使用factordb.com 進行大質因數分解
-
-答案如下:
-863653476616376575308866344984576466644942572246900013156919 * 965445304326998194798282228842484732438457170595999523426901
-
-步驟三:產生私鑰private key==>使用rsatool工具模組
-
-語法格式: ./rsatool.py -p primeP -q primeQ -o outputFile
-
-python ./rsatool/rsatool.py -p 863653476616376575308866344984576466644942572246900013156919 -q 965445304326998194798282228842484732438457170595999523426901 -o ./priv.key
-
-步驟四:使用openssl解密==>就可以得到答案
-
-openssl rsautl -decrypt -in flag.raw -inkey priv.key
-
-# SECCON 2017 Quals:crypto_ps_and_qs
-
+# RSA_CM_102
+>* SECCON 2017 Quals:crypto_ps_and_qs
 >* Common Factor Attack
 >* 
 >* https://github.com/p4-team/ctf/tree/master/2017-12-09-seccon-quals/crypto_ps_and_qs
@@ -339,6 +328,7 @@ n1 = int(s1.replace("\n", "").replace(":", "").replace(" ", ""), 16)
 n2 = int(s2.replace("\n", "").replace(":", "").replace(" ", ""), 16)
 e = 65537
 
+# Extended Euclidean algorithm擴展歐幾裡得演算法(extgcd)
 def extgcd(a, b):
     x,y, u,v = 0,1, 1,0
     while a != 0:
@@ -493,8 +483,11 @@ def main():
 
 main()
 ```
-# RSA_TP_103
+# RSA_TP_10
+
 MMA CTF 2nd 2016 : twin-primes-50
+
+
 
 # RSA_CM1_104
 codeblue2017
@@ -505,7 +498,21 @@ https://theromanxpl0it.github.io/ctf_codeblue2017/common1/
 
 # RSA_CM1_106
 
+# RSA_WA_
 
+# RSA Wiener Attack
+```
+使用openssl工具解析RSA公開金鑰檔後發現加密金鑰e的位數很大，因此對應的解密金鑰位數就會比較低，
+可以猜測解題的思路是猜解出RSA解密金鑰d，也就是針對RSA演算法的低解密指數攻擊(RSA Wiener Attack)，
+攻擊代碼可以參考https://ctfcrew.org/writeup/87
+```
+```
+0x01  猜解RSA私密金鑰和素因數
+0x02 生成RSA私密金鑰檔
+0x03 使用openssl解密RSA密文
+
+http://bobao.360.cn/ctf/learning/124.html
+```
 # HASH_001_暴力破解法
 
 angstromCTF 2016 : brute-force-40
