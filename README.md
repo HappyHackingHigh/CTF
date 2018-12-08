@@ -26,6 +26,16 @@ Reverse Engineering 165 (Much Ado About Hacking)
 
 # reverse
 
+### 101
+
+```
+alexctf-2017/reverse-engineering/re1-gifted-50
+https://github.com/ctfs/write-ups-2017/tree/master/alexctf-2017/reverse-engineering/re1-gifted-50
+
+https://www.rogdham.net/2017/02/06/alexctf-2017-write-ups.en
+
+
+```
 
 picoCTF 2017 : shells-70
 https://github.com/ctfs/write-ups-2017/tree/master/picoctf-2017/binary-exploitation/shells-70
